@@ -7,6 +7,7 @@
 
 #popupQR .dialog {
   display: flex;
+  height: 100dvh;
 }
 
 .dialogtitile {

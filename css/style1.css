@@ -10262,7 +10262,7 @@
     justify-content: center;
     pointer-events: none;
   }
-  .dialog {
+  /* .dialog {
     background-color: rgb(99 91 91 / 60%);
     right: 0;
     bottom: 0;
@@ -10294,7 +10294,39 @@
     z-index: inherit;
     box-shadow: 0 11px 15px -7px rgb(0 0 0 / 20%),
       0 24px 38px 3px rgb(0 0 0 / 14%), 0 9px 46px 8px rgb(0 0 0 / 12%);
+  } */
+
+  .dialog {
+    background-color: rgba(99, 91, 91, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10005 !important;
+    pointer-events: none;
+    padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 16px)
+      env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 16px);
   }
+
+  .dialog .content {
+    width: 100%;
+    max-width: 375px;
+    max-height: calc(100vh - 40px); /* để tránh tràn viền màn hình */
+    overflow-y: auto;
+    border-radius: 10px;
+    background-color: white;
+    margin: auto;
+    pointer-events: auto;
+    padding: 20px;
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2),
+      0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease-in-out;
+  }
+
   .v-card {
     border-width: thin;
     display: block;
