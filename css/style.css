@@ -1075,9 +1075,15 @@ form label {
   -ms-border-radius: 50%;
   border-radius: 50%;
 }
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .heart {
     display: none;
+  }
+} */
+@media screen and (max-width: 768px) {
+  .heart {
+    position: static !important;
+    margin: auto auto;
   }
 }
 

@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="./css/style1.css" />
     <link rel="stylesheet" href="./css/styles10.css" />
     <link rel="stylesheet" href="./css/namtay.css" />
+    <link rel="stylesheet" href="./css/animate-custom.css" />
 
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
@@ -123,7 +124,7 @@
         <div class="container">
           <div class="row">
             <div
-              class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box"
+              class="col-md-8 col-md-offset-2 text-center fh5co-heading fade-in-up"
             >
               <h2>Xin chào!</h2>
               <h3>
@@ -158,6 +159,15 @@
                   </div>
                 </div>
                 <span style="font-size: 2em; letter-spacing: 0.1em">2025</span>
+                <div>
+                  <a
+                    class="btn btn-outline-light btn-sm shadow rounded-pill px-3 my-2"
+                    target="_blank"
+                    href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Đám%20Cưới%20Dũng%20%26%20Mỹ&dates=20250702T103000/20250702T123000&details=Dũng%20%26%20Mỹ%20hân%20hoan%20kính%20mời%20bạn%20đến%20chung%20vui%20cùng%20gia%20đình%20trong%20ngày%20trọng%20đại%20của%20chúng%20mình.&location=Trung%20Tâm%20Tiệc%20Cưới%20A.Dõng%20Palace%2C%2064%20Trần%20Phú%2C%20Hà%20Lam%2C%20Thăng%20Bình&ctz=Asia/Ho_Chi_Minh"
+                  >
+                    <i class="fa-solid fa-calendar-check me-2"></i>Save The Date
+                  </a>
+                </div>
                 <div style="display: flex; justify-content: center">
                   <div class="h-divider">
                     <div class="shadow"></div>
@@ -169,7 +179,7 @@
             </div>
           </div>
           <div class="couple-wrap animate-box">
-            <div class="couple-half">
+            <div class="couple-half fade-in-left">
               <div class="groom">
                 <img
                   src="images/groom.jpg"
@@ -182,8 +192,10 @@
                 <p>Chú rể</p>
               </div>
             </div>
-            <p class="heart text-center"><i class="icon-heart2"></i></p>
-            <div class="couple-half">
+            <p class="heart text-center fade-in-up">
+              <i class="icon-heart2"></i>
+            </p>
+            <div class="couple-half fade-in-right">
               <div class="bride">
                 <img
                   src="images/bride.jpg"
@@ -297,7 +309,7 @@
         <div class="container">
           <div class="row">
             <div
-              class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box"
+              class="col-md-8 col-md-offset-2 text-center fh5co-heading fade-in-up"
             >
               <span>Our Memories</span>
               <h2>Wedding Gallery</h2>
@@ -336,7 +348,7 @@
         <div class="container">
           <div class="row">
             <div
-              class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box"
+              class="col-md-8 col-md-offset-2 text-center fh5co-heading fade-in-up"
             >
               <span>Our Special Events</span>
               <h2>Thời gian sự kiện</h2>
@@ -347,12 +359,12 @@
               <div class="display-tc">
                 <div class="col-md-10 col-md-offset-1">
                   <div class="col-md-6 col-sm-6 text-center">
-                    <div class="event-wrap animate-box">
+                    <div class="event-wrap fade-in-left">
                       <h3>Lễ ăn hỏi</h3>
                       <div class="event-col">
                         <i class="icon-clock"></i>
                         <span>07:00</span>
-                        <span>11:00</span>
+                        <span>10:00</span>
                       </div>
                       <div class="event-col">
                         <i class="icon-calendar"></i>
@@ -363,11 +375,11 @@
                     </div>
                   </div>
                   <div class="col-md-6 col-sm-6 text-center">
-                    <div class="event-wrap animate-box">
+                    <div class="event-wrap fade-in-right">
                       <h3>Tiệc cưới</h3>
                       <div class="event-col">
                         <i class="icon-clock"></i>
-                        <span>11:00</span>
+                        <span>10:30</span>
                         <span>12:00</span>
                       </div>
                       <div class="event-col">
@@ -387,8 +399,8 @@
 
       <div
         id="fh5co-couple"
-        class="fh5co-bg fh5co-heading"
-        style="padding-top: 20px; margin-bottom: 0"
+        class="fh5co-bg fh5co-heading fade-in-up"
+        style="padding-top: 50px; margin-bottom: 0"
       >
         <h2 style="text-align: center; color: black">Bản đồ tới nhà hàng</h2>
         <iframe
@@ -410,7 +422,7 @@
       >
         <div class="overlay"></div>
         <div class="container">
-          <div class="row animate-box">
+          <div class="row fade-in-up">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
               <h2>Bạn có thể tham dự tiệc cưới không?</h2>
               <p>
@@ -476,23 +488,47 @@
         </div>
       </div>
 
-      <!-- chân trang  -->
+      <!-- chân trang -->
       <div
         id="fh5co-started"
         class="fh5co-bg"
-        style="background-image: url(images/img_bg_1.jpg)"
+        style="
+          background-image: url(images/img_bg_1.jpg);
+          background-size: cover;
+          background-position: center;
+        "
       >
         <div class="overlay"></div>
-        <div class="container">
-          <div class="row animate-box">
-            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-              <h2>Thanh you</h2>
+        <div class="container" style="max-width: 100%; padding: 0">
+          <div class="row animate-box" style="margin: 0">
+            <div
+              class="col-md-12 text-center fh5co-heading fade-in-up"
+              style="padding: 50px 20px"
+            >
+              <h2>Thank you</h2>
               <p>
                 Sự hiện diện của quý vị là niềm vinh hạnh <br />
                 cho gia đình chúng tôi
               </p>
             </div>
           </div>
+        </div>
+
+        <!-- "Product by DungMihn" -->
+        <div
+          style="
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 10px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 4px 0;
+          "
+        >
+          Product by <strong>DungMihn</strong>
         </div>
       </div>
     </div>
@@ -538,7 +574,8 @@
             />
           </div>
           <div class="text-center dialogtitile">
-            <h3>Gửi lời chúc đến đôi uyên ương</h3>
+            <h3>Mừng cưới đến cô dâu và chú rể</h3>
+            <h5>*Của chồng công vợ - Tuy hai mà một, tuy một mà hai*</h5>
           </div>
           <div class="bank">
             <!-- <span><b>ĐANG MINH DUNG</b></span
@@ -551,6 +588,15 @@
             </div> -->
             <img src="images/stk_groom.jpg" />
           </div>
+          <br />
+          <button
+            class="popup-close btn btn-primary btn-block"
+            onclick="hideDialogDonate()"
+          >
+            Xin cảm ơn
+          </button>
+
+          <br />
         </div>
       </div>
     </div>
@@ -583,7 +629,7 @@
     <!-- The Modal -->
     <div id="myModal" class="popup-modal">
       <!-- Modal content -->
-      <div class="popup-modal-content" style="border-radius: 15px">
+      <div class="popup-modal-content text-center" style="border-radius: 15px">
         <p>Thật đáng tiếc khi bạn không thể tới dự tiệc</p>
         <p>Món quà cưới bạn có thể gửi tặng gia đình tại đây</p>
 
@@ -646,12 +692,47 @@
       const music = document.getElementById("music");
       const bg = document.getElementsByClassName("my-bg")[0];
       music.volume = 0.3;
-      //Add an event listner to the start button
+
       startbtn.addEventListener("click", () => {
         bg.style.display = "none";
         music.play().then(() => {
-          //Hide the loader and show the content
           content.style.display = "block";
+
+          // 🔥 Pháo hoa nổ
+          confetti({
+            particleCount: 200,
+            spread: 80,
+            origin: { y: 0.6 },
+          });
+
+          // 🌸 Khởi động particles.js với hiệu ứng hoa rơi
+          particlesJS("particles-js", {
+            particles: {
+              number: { value: 10, density: { enable: true, value_area: 800 } },
+              shape: {
+                type: "image",
+                image: {
+                  src: "https://cdn-icons-png.flaticon.com/512/833/833472.png",
+                  width: 32,
+                  height: 32,
+                },
+              },
+              opacity: { value: 0.8 },
+              size: { value: 20, random: true },
+              move: {
+                direction: "bottom",
+                out_mode: "out",
+                speed: 1.5,
+              },
+            },
+            interactivity: {
+              events: {
+                onhover: { enable: false },
+                onclick: { enable: false },
+              },
+            },
+            retina_detect: true,
+          });
         });
       });
 
@@ -680,17 +761,20 @@
           const guest_name = $("#name").val();
           const guest_type = $("#guest-types").val();
 
+          if (!guest_name) {
+            showAlertPopup();
+            return;
+          }
+
           fetch(
-            atob(
-              "aHR0cHM6Ly90aC13ZWRkaW5nLWJhY2tlbmQudHVuZ250LXB0aXQxNi53b3JrZXJzLmRldi9hZGQtZ3Vlc3Q="
-            ),
+            "https://script.google.com/macros/s/AKfycbxUJBxDmKevkfg7kCm8eevUYhdC5J0gTVwZ6L5kgMi_j7mkMI1h3Jtw87HWGSg29a59wg/exec",
             {
               method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: new URLSearchParams({
                 name: guest_name,
-                type: Number(guest_type),
-                attend: 1,
+                type: guest_type,
+                attend: "1",
               }),
             }
           );
@@ -704,18 +788,20 @@
         .addEventListener("click", async (event) => {
           const guest_name = $("#name").val();
           const guest_type = $("#guest-types").val();
+          if (!guest_name) {
+            showAlertPopup();
+            return;
+          }
 
           fetch(
-            atob(
-              "aHR0cHM6Ly90aC13ZWRkaW5nLWJhY2tlbmQudHVuZ250LXB0aXQxNi53b3JrZXJzLmRldi9hZGQtZ3Vlc3Q="
-            ),
+            "https://script.google.com/macros/s/AKfycbxUJBxDmKevkfg7kCm8eevUYhdC5J0gTVwZ6L5kgMi_j7mkMI1h3Jtw87HWGSg29a59wg/exec",
             {
               method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: new URLSearchParams({
                 name: guest_name,
-                type: Number(guest_type),
-                attend: 0,
+                type: guest_type,
+                attend: "0",
               }),
             }
           );
@@ -740,7 +826,7 @@
       function showDialogDonate() {
         document.querySelector(`#popupQR`).style.display = "flex";
         disableScroll();
-        document.body.style.pointerEvents = "none";
+        // document.body.style.pointerEvents = "none";
       }
       function hideDialogDonate() {
         document.querySelector(`#popupQR`).style.display = "none"; // Ẩn popup
@@ -764,6 +850,136 @@
       function preventDefault(e) {
         e.preventDefault();
       }
+    </script>
+    <!-- lưu lịch  -->
+    <script>
+      document.querySelectorAll(".ripple-btn").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          const circle = document.createElement("span");
+          circle.classList.add("ripple");
+          this.appendChild(circle);
+
+          const d = Math.max(this.clientWidth, this.clientHeight);
+          circle.style.width = circle.style.height = d + "px";
+
+          const rect = this.getBoundingClientRect();
+          circle.style.left = e.clientX - rect.left - d / 2 + "px";
+          circle.style.top = e.clientY - rect.top - d / 2 + "px";
+
+          setTimeout(() => circle.remove(), 600);
+        });
+      });
+    </script>
+    <!-- // tránh thông tin  -->
+    <script>
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault()
+      );
+    </script>
+    <script>
+      document.addEventListener("keydown", function (e) {
+        if (
+          (e.ctrlKey && (e.key === "u" || e.key === "U")) || // Ctrl+U
+          e.key === "F12" ||
+          (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) // DevTools
+        ) {
+          e.preventDefault();
+          alert("Tính năng bị tắt để bảo vệ nội dung. 😊");
+        }
+      });
+    </script>
+    <!-- Hiệu ứng pháo hoa -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <!-- hiệu ứng hoa lá rơi  -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <div
+      id="particles-js"
+      style="
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      "
+    ></div>
+    <!-- Thông báo validate -->
+    <div
+      id="alert-popup"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      "
+    >
+      <div
+        style="
+          background: white;
+          padding: 30px 20px;
+          border-radius: 12px;
+          text-align: center;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+          max-width: 90%;
+        "
+      >
+        <p style="font-size: 18px; margin-bottom: 15px">
+          🎉 Vui lòng nhập tên hoặc biệt danh trước khi xác nhận nhé!
+        </p>
+        <button
+          onclick="hideAlertPopup()"
+          style="
+            padding: 8px 20px;
+            background: #d63384;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+          "
+        >
+          OK
+        </button>
+      </div>
+    </div>
+    <script>
+      function showAlertPopup() {
+        document.getElementById("alert-popup").style.display = "flex";
+      }
+
+      function hideAlertPopup() {
+        document.getElementById("alert-popup").style.display = "none";
+      }
+    </script>
+    <!-- hiệu ứng của animate-custom  -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const fadeEls = document.querySelectorAll(
+          ".fade-in-up, .fade-in-left, .fade-in-right"
+        );
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+              } else {
+                entry.target.classList.remove("animate"); // cho phép reset hiệu ứng nếu rời khỏi màn hình
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        fadeEls.forEach((el) => observer.observe(el));
+      });
     </script>
   </body>
 </html>

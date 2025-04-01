@@ -144,3 +144,40 @@
     transform: translateY(-4.6rem) translateX(-2.5rem) rotateZ(-1deg) scale(1);
   }
 }
+
+/* Nền mặc định có màu trắng mờ nhẹ */
+.btn-outline-light {
+  background-color: rgb(255, 255, 255);
+  color: #f14e95;
+  border-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Khi hover sẽ chuyển sang nền hồng đậm */
+.btn-outline-light:hover {
+  background-color: #f14e95;
+  color: white;
+  border-color: #f14e95;
+}
+
+/* Ripple effect (giữ nguyên như đã đưa) */
+.ripple-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-btn .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
