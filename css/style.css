@@ -340,7 +340,7 @@ figure {
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover {
-    height: 600px;
+    height: 700px;
   }
 }
 .fh5co-cover .display-t,
@@ -352,7 +352,7 @@ figure {
 @media screen and (max-width: 768px) {
   .fh5co-cover .display-t,
   .fh5co-cover .display-tc {
-    height: 600px;
+    height: 700px;
   }
 }
 .fh5co-cover.fh5co-cover-sm {
@@ -360,7 +360,7 @@ figure {
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover.fh5co-cover-sm {
-    height: 400px;
+    height: 500px;
   }
 }
 .fh5co-cover.fh5co-cover-sm .display-t,
@@ -372,7 +372,7 @@ figure {
 @media screen and (max-width: 768px) {
   .fh5co-cover.fh5co-cover-sm .display-t,
   .fh5co-cover.fh5co-cover-sm .display-tc {
-    height: 400px;
+    height: 500px;
   }
 }
 

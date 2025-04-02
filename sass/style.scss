@@ -406,7 +406,7 @@ figure {
     z-index: 10;
   }
   @media screen and (max-width: $screen-sm) {
-    height: 600px;
+    height: 700px;
   }
   .display-t,
   .display-tc {
@@ -414,7 +414,7 @@ figure {
     display: table;
     width: 100%;
     @media screen and (max-width: $screen-sm) {
-      height: 600px;
+      height: 700px;
     }
   }
 
