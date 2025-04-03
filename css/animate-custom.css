@@ -30,3 +30,44 @@
   transition: all 0.3s;
   opacity: 1;
 }
+
+.invitation-frame {
+  border: 2px solid #eec1d9;
+  border-radius: 15px;
+  padding: 20px 10px;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 40px;
+  position: relative;
+  background: white;
+  overflow: hidden;
+}
+
+.invitation-frame::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border-radius: 15px;
+  background: linear-gradient(120deg, #ffc0cb, #fddde6, #ffc0cb);
+  z-index: 0;
+  animation: glowMove 5s linear infinite;
+  background-size: 200% 200%;
+  opacity: 0.4;
+}
+
+.invitation-frame > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes glowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
