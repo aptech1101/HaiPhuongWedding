@@ -107,3 +107,10 @@
   right: -20px;
   transform: rotate(15deg);
 }
+
+.alt-font {
+  font-family: "Dancing Script", cursive;
+  font-weight: 700 !important; /* 700 là in đậm */
+  font-size: 2em; /* (Tùy chỉnh, bạn muốn to hơn nhỏ hơn thì đổi) */
+  color: #ed1c24; /* Màu đỏ nổi bật */
+}

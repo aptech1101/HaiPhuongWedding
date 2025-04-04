@@ -21,6 +21,10 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Animate.css -->
     <link rel="stylesheet" href="css/animate.css" />
@@ -159,10 +163,14 @@
               class="col-md-8 col-md-offset-2 text-center fh5co-heading fade-in-up"
             >
               <h2>Xin chào!</h2>
-              <h3>
-                Trân trọng kính mời Quý Khách đến dự bữa tiệc chung vui cùng gia
-                đình
-              </h3>
+              <h4 style="margin-top: 40px">TRÂN TRỌNG KÍNH MỜI</h4>
+              <p class="alt-font">
+                <span
+                  style="color: #ed1c24; font-size: 150%; text-transform: none"
+                  ><strong>Quý Khách</strong></span
+                >
+              </p>
+              <h4>ĐẾN DỰ BỮA TIỆC CHUNG VUI CÙNG GIA ĐÌNH</h4>
               <div class="invitation-frame">
                 <span style="font-size: 2em">Tháng 07</span>
                 <div
@@ -595,8 +603,8 @@
             >
               <!-- <h2>Thank you</h2> -->
               <p>
-                Sự hiện diện của quý vị là niềm vinh hạnh <br />
-                cho gia đình chúng tôi
+                Sự hiện diện của Quý vị là niềm vinh hạnh cho gia đình chúng
+                mình
               </p>
             </div>
           </div>
@@ -1111,6 +1119,34 @@
         flowers.forEach((flower) => {
           observer.observe(flower);
         });
+      });
+    </script>
+    <!-- // chuyển tên  -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Lấy tham số "name" từ URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const guestNameParam = urlParams.get("name");
+
+        if (guestNameParam) {
+          // Chuyển dấu '-' thành khoảng trắng và decode
+          let guestName = decodeURIComponent(guestNameParam.replace(/-/g, " "));
+
+          // Hàm viết hoa chữ cái đầu mỗi từ
+          // function capitalize(str) {
+          //   return str.replace(/\b\w/g, (c) => c.toUpperCase());
+          // }
+          // guestName = capitalize(guestName);
+
+          // Update phần <strong>Quý Khách</strong> thành tên mới
+          const guestNameElement = document.querySelector("p.alt-font strong");
+          if (guestNameElement) {
+            guestNameElement.innerText = guestName;
+          }
+
+          // Update tiêu đề trang luôn
+          document.title = `💖 Thiệp cưới — Dũng & Mỹ kính mời ${guestName} 💖`;
+        }
       });
     </script>
   </body>
