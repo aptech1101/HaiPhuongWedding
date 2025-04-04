@@ -601,10 +601,10 @@
               class="col-md-12 text-center fh5co-heading fade-in-up"
               style="padding: 50px 20px"
             >
-              <!-- <h2>Thank you</h2> -->
-              <p>
-                Sự hiện diện của Quý vị là niềm vinh hạnh cho gia đình chúng
-                mình
+              <p class="alt-font">
+                Sự hiện diện của
+                <strong id="guestName">Quý Khách</strong>
+                là niềm vinh hạnh cho hai bên gia đình ♡
               </p>
             </div>
           </div>
@@ -1142,6 +1142,12 @@
           const guestNameElement = document.querySelector("p.alt-font strong");
           if (guestNameElement) {
             guestNameElement.innerText = guestName;
+          }
+          if (guestName) {
+            const decodedName = decodeURIComponent(
+              guestName.replace(/-/g, " ")
+            );
+            document.getElementById("guestName").innerText = decodedName;
           }
 
           // Update tiêu đề trang luôn
