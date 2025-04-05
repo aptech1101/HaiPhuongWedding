@@ -63,9 +63,28 @@
       <div class="wrapper" id="startbtn">
         <div class="lid one"></div>
         <div class="lid two"></div>
-        <div class="envelope"></div>
+        <div class="envelope" style="position: relative">
+          <div
+            id="send-to"
+            class="fade-in-text alt-font"
+            style="
+              position: absolute;
+              top: 50px;
+              left: 50%;
+              transform: translateX(-50%);
+              white-space: nowrap;
+              font-size: 20px;
+              color: #ed1c24;
+              font-weight: bold;
+              opacity: 0;
+              z-index: 2;
+            "
+          >
+            <!-- Gửi: ... -->
+          </div>
+        </div>
         <div class="letter">
-          <p>
+          <p class="alt-font">
             Thiệp cưới! <br />
             Dũng & Mỹ
           </p>
@@ -1148,6 +1167,11 @@
               guestName.replace(/-/g, " ")
             );
             document.getElementById("guestName").innerText = decodedName;
+
+            // Cập nhật phần "Gửi" bên ngoài thiệp
+            const sendToElement = document.getElementById("send-to");
+            if (sendToElement)
+              sendToElement.innerText = `Thân Gửi: ${decodedName}`;
           }
 
           // Update tiêu đề trang luôn

@@ -114,3 +114,19 @@
   font-size: 2em; /* (Tùy chỉnh, bạn muốn to hơn nhỏ hơn thì đổi) */
   color: #ed1c24; /* Màu đỏ nổi bật */
 }
+
+.fade-in-text {
+  animation: fadeIn 1.5s ease-in forwards;
+  animation-delay: 0.5s; /* Delay 0.5s sau khi thiệp xuất hiện */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
