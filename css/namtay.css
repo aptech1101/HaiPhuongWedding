@@ -181,3 +181,48 @@
     opacity: 0;
   }
 }
+
+.mini_calendar table {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+}
+
+.mini_calendar th,
+.mini_calendar td {
+  padding: 8px;
+  width: 14.2%;
+}
+
+.highlight-date {
+  background: #ed1c24;
+  color: white;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  margin: auto;
+  font-weight: bold;
+}
+
+.wedding-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 10px 0;
+}
+
+.wedding-date::before,
+.wedding-date::after {
+  content: "";
+  width: 40px; /* Độ dài gạch ngang */
+  height: 1px;
+  background: white;
+  margin: 0 10px;
+  opacity: 0.8;
+}
