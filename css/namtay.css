@@ -226,3 +226,11 @@
   margin: 0 10px;
   opacity: 0.8;
 }
+.mini_calendar thead th {
+  text-align: center;
+  padding: 8px 0;
+  border-top: 1px solid #ccc; /* gạch ngang */
+  border-bottom: 1px solid #ccc; /* gạch ngang */
+  font-weight: 500;
+  color: #2f3b52;
+}
