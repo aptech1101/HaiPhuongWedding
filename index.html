@@ -169,7 +169,10 @@
 
                   <div class="simply-countdown simply-countdown-one"></div>
                   <p>
-                    <a href="#fh5co-started" class="btn btn-default btn-sm"
+                    <!-- <a href="#fh5co-started" class="btn btn-default btn-sm"
+                      >Tham dự</a
+                    > -->
+                    <a id="scroll-to-start" class="btn btn-default btn-sm"
                       >Tham dự</a
                     >
                   </p>
@@ -1269,6 +1272,20 @@
         });
       });
     </script>
+
+    <!-- tham dự  -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const scrollBtn = document.getElementById("scroll-to-start");
+        scrollBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector("#fh5co-started").scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+
     <!-- // chuyển tên  -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
