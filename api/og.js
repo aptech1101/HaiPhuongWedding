@@ -6,14 +6,18 @@ export default function handler(req, res) {
       <!DOCTYPE html>
       <html lang="vi">
         <head>
-          <meta charset="UTF-8">
+          <meta charset="UTF-8" />
           <meta property="og:title" content="💖 Thiệp cưới — Dũng & Mỹ 💖" />
           <meta property="og:description" content="Trân trọng kính mời ${decodedName} đến dự tiệc cưới vào ngày 02/07/2025." />
           <meta property="og:image" content="https://dungmywedding.vercel.app/images/thiepmoi.jpg" />
           <meta property="og:url" content="https://dungmywedding.vercel.app/og?name=${name}" />
           <meta property="og:type" content="website" />
+          <meta http-equiv="refresh" content="0; url=/?name=${name}" />
+          <title>Redirecting...</title>
         </head>
-        <body></body>
+        <body>
+          <p>Đang chuyển hướng...</p>
+        </body>
       </html>
     `;
 
