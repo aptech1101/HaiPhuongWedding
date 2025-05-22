@@ -1,27 +1,3 @@
 {
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": "(?i)(googlebot|bingbot|facebookexternalhit|twitterbot|linkedinbot)"
-        }
-      ],
-      "destination": "https://service.prerender.io/https://dungmywedding.vercel.app/$1",
-      "statusCode": 302
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Prerender-Token",
-          "value": "vF7sJJELERfQuaH7POlM"
-        }
-      ]
-    }
-  ]
+  "rewrites": [{ "source": "/og", "destination": "/api/og" }]
 }
