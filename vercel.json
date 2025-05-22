@@ -1,3 +1,26 @@
 {
-  "rewrites": [{ "source": "/og", "destination": "/api/og" }]
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(?i)(googlebot|bingbot|yahoo|baiduspider|facebookexternalhit|twitterbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot)"
+        }
+      ],
+      "destination": "https://service.prerender.io/https://dungmywedding.vercel.app/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Prerender-Token",
+          "value": "vF7sJJELERfQuaH7POlM"
+        }
+      ]
+    }
+  ]
 }
