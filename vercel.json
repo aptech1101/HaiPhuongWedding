@@ -1,15 +1,16 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/(.*)",
       "has": [
         {
           "type": "header",
           "key": "user-agent",
-          "value": "(?i)(googlebot|bingbot|yahoo|baiduspider|facebookexternalhit|twitterbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot)"
+          "value": "(?i)(googlebot|bingbot|facebookexternalhit|twitterbot|linkedinbot)"
         }
       ],
-      "destination": "https://service.prerender.io/https://dungmywedding.vercel.app/$1"
+      "destination": "https://service.prerender.io/https://dungmywedding.vercel.app/$1",
+      "statusCode": 302
     }
   ],
   "headers": [
