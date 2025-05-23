@@ -29,7 +29,7 @@ export default function handler(req, res) {
   </head>
   <body>
     Tình yêu viết tiếp chuyện đôi mình,  <br />
-  Thiệp hồng gửi bạn nghĩa chân tình 💌
+    Thiệp hồng gửi bạn nghĩa chân tình 💌
   </body>
 </html>
 `;
