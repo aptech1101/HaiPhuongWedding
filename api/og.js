@@ -7,7 +7,7 @@ export default function handler(req, res) {
 <html lang="vi">
   <head>
     <meta charset="UTF-8">
-    <meta property="og:title" content="💖 Thiệp Cưới — Dũng & Mỹ 💖" />
+    <meta property="og:title" content="💖 Thiệp Cưới — Dũng & Mỹ 💌 Gửi: ${decodedName} 💖" />
     <meta property="og:description" content="Trân trọng kính mời ${decodedName} đến dự tiệc cưới của Dũng & Mỹ vào ngày 02/07/2025 ♡" />
     <meta property="og:image" content="https://dungmywedding.vercel.app/images/thiepmoi.jpg" />
     <meta property="og:url" content="https://dungmywedding.vercel.app/og?name=${name}" />
