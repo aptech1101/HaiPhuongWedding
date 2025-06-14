@@ -9,6 +9,29 @@
   font-weight: normal;
   font-style: normal;
 }
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-10px);
+  }
+}
+
+/* css  chữ thiệp mời  */
+#invite-label {
+  position: absolute;
+  top: 70%; /* đưa lên trên nút, bạn có thể chỉnh % cho phù hợp */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Dancing Script", cursive; /* hoặc font bạn muốn */
+  font-size: 2rem;
+  color: black;
+  font-weight: bold;
+  z-index: 4;
+  animation: fadeInDown 1s ease-out; /* cần có animate.css hoặc tự định nghĩa */
+}
 
 @font-face {
   font-family: "Peristiwa";

@@ -76,6 +76,30 @@
         <div class="lid one"></div>
         <div class="lid two"></div>
         <div class="envelope" style="position: relative; text-align: center">
+          <!-- Ô hiển thị chữ Thiệp Mời -->
+          <div id="invite-label">Thiệp Mời</div>
+          <button
+            id="open-card-button"
+            style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background: transparent;
+              border: none;
+              cursor: pointer;
+              z-index: 3;
+              animation: bounce 1.5s infinite;
+            "
+          >
+            <img
+              src="./images/animations/Animation - iconclick.gif"
+              alt="Click here"
+              width="100"
+              height="100"
+            />
+          </button>
+
           <div
             id="send-to"
             class="fade-in-text alt-font"
@@ -721,6 +745,85 @@
           </div>
         </div>
       </div>
+      <!-- ===== SECTION: HỘP MỪNG CƯỚI ===== -->
+        <div
+          class="content"
+          style="padding: 0; margin: 0 auto"
+        >
+          <div
+            class="card v-card"
+            style="
+              position: relative;
+              padding: 30px;
+              border-radius: 12px;
+              box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            "
+          >
+              <span class="v-btn__content">
+                <span
+                  aria-hidden="true"
+                  class="v-icon notranslate theme--light"
+                >
+                </span>
+              </span>
+            </button>
+
+            <!-- Ảnh / QR-Code -->
+            <div style="margin-bottom: 20px; text-align: center">
+              <img
+                src="https://ucarecdn.com/a43b6688-d4a7-410c-8fc8-33b3c6dcdffd/-/format/auto/-/preview/3000x3000/-/quality/lighter/r1%20_1_.png"
+                alt="Thiệp Mừng"
+                style="max-width: 100%; height: auto; border-radius: 8px"
+              />
+            </div>
+
+            <!-- Tiêu đề & Lời nhắn -->
+            <div class="text-center dialogtitile" style="margin-bottom: 20px">
+              <h3
+                style="
+                  font-family: 'Dancing Script', cursive;
+                  font-size: 2rem;
+                  color: #d1456e;
+                  margin-bottom: 8px;
+                "
+              >
+                Mừng cưới đến Cô dâu & Chú rể
+              </h3>
+              <h5 style="font-style: italic; color: #999">
+                *Của chồng công vợ – Tuy hai mà một, tuy một mà hai*
+              </h5>
+            </div>
+
+            <!-- Thông tin ngân hàng -->
+            <div class="bank" style="text-align: center; margin-bottom: 20px">
+              <img
+                src="images/stk_groom.jpg"
+                alt="QR chuyển tiền"
+                style="
+                  width: 60%;
+                  height: auto;
+                  margin-bottom: 12px;
+                "
+              />
+              <ul
+                style="
+                  list-style: none;
+                  padding: 0;
+                  margin: 0;
+                  color: #555;
+                  font-size: 1.2rem;
+                  line-height: 1.5;
+                "
+              >
+                <li><strong>Ngân hàng:</strong> BIDV</li>
+                <li><strong>Tên tài khoản:</strong> DANG MINH DUNG</li>
+                <li><strong>STK:</strong> 8854636201</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      <!-- ======================================= -->
 
       <!-- chân trang -->
       <div
