@@ -47,7 +47,7 @@ startbtn.addEventListener("click", () => {
 });
 
 // Đếm ngược
-var d = new Date(new Date("2025-07-02 10:30:00"));
+var d = new Date(new Date("2026-01-04 10:30:00"));
 gallery = [];
 for (let n = 1; n <= 10; n++) {
   gallery.push(`images/gallery-${n}.jpg`);
@@ -226,7 +226,7 @@ function handleCalendarClick() {
     window.location.href = "wedding.ics";
   } else {
     window.open(
-      "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Đám%20Cưới%20Dũng%20%26%20Mỹ&dates=20250702T103000/20250702T123000&details=Dũng%20%26%20Mỹ%20hân%20hoan%20kính%20mời%20bạn%20đến%20chung%20vui%20cùng%20gia%20đình%20trong%20ngày%20trọng%20đại%20của%20chúng%20mình.&location=Trung%20Tâm%20Tiệc%20Cưới%20A.Dõng%20Palace%2C%2064%20Trần%20Phú%2C%20Hà%20Lam%2C%20Thăng%20Bình&ctz=Asia/Ho_Chi_Minh",
+      "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Đám%20Cưới%20Hải%20%26%20Phương&dates=20260104T103000/20260104T123000&details=Hải%20%26%20Phương%20hân%20hoan%20kính%20mời%20bạn%20đến%20chung%20vui%20cùng%20gia%20đình%20trong%20ngày%20trọng%20đại%20của%20chúng%20mình.&location=Trung%20Tâm%20Tiệc%20Cưới%20A.Dõng%20Palace%2C%2064%20Trần%20Phú%2C%20Hà%20Lam%2C%20Thăng%20Bình&ctz=Asia/Ho_Chi_Minh",
       "_blank"
     );
   }
