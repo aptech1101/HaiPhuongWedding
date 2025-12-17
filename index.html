@@ -59,6 +59,94 @@
     <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
 
+    <!-- Music toggle & tooltip styles -->
+    <style>
+      /* Floating music toggle button (bottom-left corner) */
+      #music-toggle {
+        position: fixed;
+        left: 16px;
+        bottom: 16px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+        cursor: pointer;
+        z-index: 3000; /* cao hơn nội dung, thấp hơn các popup full-screen */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+
+      #music-toggle:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+        background: rgba(255, 255, 255, 1);
+      }
+
+      #music-toggle:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      #music-toggle:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(209, 69, 110, 0.5);
+      }
+
+      #music-icon {
+        pointer-events: none;
+      }
+
+      /* Tooltip hướng dẫn bật nhạc – không chặn thao tác (pointer-events: none) */
+      #music-tooltip {
+        position: fixed;
+        left: 16px;
+        bottom: 76px; /* nằm phía trên nút loa */
+        max-width: 260px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.82);
+        color: #fff;
+        font-size: 13px;
+        line-height: 1.5;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+        z-index: 2999;
+        opacity: 0;
+        transform: translateY(10px);
+        pointer-events: none; /* không chặn click vào các phần tử phía sau */
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      #music-tooltip.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Tối ưu hiển thị trên mobile */
+      @media (max-width: 480px) {
+        #music-toggle {
+          width: 42px;
+          height: 42px;
+          font-size: 20px;
+          left: 12px;
+          bottom: 12px;
+        }
+
+        #music-tooltip {
+          left: 12px;
+          right: 12px;
+          bottom: 64px;
+          text-align: center;
+        }
+      }
+    </style>
+
     <!-- them style tiền mừng  -->
     <link rel="stylesheet" href="./css/style1.css" />
     <link rel="stylesheet" href="./css/styles10.css" />
@@ -131,9 +219,23 @@
     </div>
 
     <div class="fh5co-loader"></div>
+    <!-- Nhạc nền (mặc định KHÔNG tự phát) -->
     <audio id="music" loop preload="auto">
       <source src="beautifulinwhite.mp3" type="audio/mpeg" />
     </audio>
+
+    <!-- Nút bật/tắt nhạc nổi góc dưới bên trái -->
+    <button
+      id="music-toggle"
+      type="button"
+      aria-label="Bật hoặc tắt nhạc nền"
+      aria-pressed="false"
+    >
+      <span id="music-icon" aria-hidden="true">🔇</span>
+    </button>
+
+    <!-- Tooltip hướng dẫn khi mở trang -->
+    <div id="music-tooltip">Nhấn vào biểu tượng loa để bật nhạc 🎵</div>
     <div id="page">
       <nav class="fh5co-nav" role="navigation">
         <div class="container">
@@ -1035,49 +1137,129 @@
       const content = document.getElementById("page");
       const music = document.getElementById("music");
       const bg = document.getElementsByClassName("my-bg")[0];
-      music.volume = 0.3;
+      const musicToggle = document.getElementById("music-toggle");
+      const musicIcon = document.getElementById("music-icon");
+      const musicTooltip = document.getElementById("music-tooltip");
 
+      // Thiết lập âm lượng mặc định & đảm bảo nhạc không tự phát khi load trang
+      if (music) {
+        music.volume = 0.3;
+        music.pause();
+        music.currentTime = 0;
+      }
+
+      // Sự kiện mở thiệp: chỉ ẩn phong bì & chạy hiệu ứng, KHÔNG tự phát nhạc
       startbtn.addEventListener("click", () => {
         bg.style.display = "none";
-        music.play().then(() => {
-          content.style.display = "block";
+        content.style.display = "block";
 
-          // 🔥 Pháo hoa nổ
-          confetti({
-            particleCount: 200,
-            spread: 80,
-            origin: { y: 0.6 },
-          });
-
-          // 🌸 Khởi động particles.js với hiệu ứng hoa rơi
-          particlesJS("particles-js", {
-            particles: {
-              number: { value: 10, density: { enable: true, value_area: 800 } },
-              shape: {
-                type: "image",
-                image: {
-                  src: "https://cdn-icons-png.flaticon.com/512/833/833472.png",
-                  width: 32,
-                  height: 32,
-                },
-              },
-              opacity: { value: 0.8 },
-              size: { value: 20, random: true },
-              move: {
-                direction: "bottom",
-                out_mode: "out",
-                speed: 1.5,
-              },
-            },
-            interactivity: {
-              events: {
-                onhover: { enable: false },
-                onclick: { enable: false },
-              },
-            },
-            retina_detect: true,
-          });
+        // 🔥 Pháo hoa nổ
+        confetti({
+          particleCount: 200,
+          spread: 80,
+          origin: { y: 0.6 },
         });
+
+        // 🌸 Khởi động particles.js với hiệu ứng hoa rơi
+        particlesJS("particles-js", {
+          particles: {
+            number: { value: 10, density: { enable: true, value_area: 800 } },
+            shape: {
+              type: "image",
+              image: {
+                src: "https://cdn-icons-png.flaticon.com/512/833/833472.png",
+                width: 32,
+                height: 32,
+              },
+            },
+            opacity: { value: 0.8 },
+            size: { value: 20, random: true },
+            move: {
+              direction: "bottom",
+              out_mode: "out",
+              speed: 1.5,
+            },
+          },
+          interactivity: {
+            events: {
+              onhover: { enable: false },
+              onclick: { enable: false },
+            },
+          },
+          retina_detect: true,
+        });
+      });
+
+      // ==========================
+      // Nút bật / tắt nhạc nền 🔇🔊
+      // ==========================
+      (function initMusicToggle() {
+        if (!music || !musicToggle || !musicIcon) return;
+
+        let isPlaying = false;
+
+        const updateIcon = () => {
+          musicIcon.textContent = isPlaying ? "🔊" : "🔇";
+          musicToggle.setAttribute("aria-pressed", isPlaying ? "true" : "false");
+        };
+
+        const toggleMusic = () => {
+          if (!isPlaying) {
+            const playPromise = music.play();
+
+            // Xử lý trường hợp trình duyệt chặn autoplay / play
+            if (playPromise && typeof playPromise.then === "function") {
+              playPromise
+                .then(() => {
+                  isPlaying = true;
+                  updateIcon();
+                })
+                .catch(() => {
+                  // Nếu bị chặn, giữ trạng thái tắt
+                  isPlaying = false;
+                  updateIcon();
+                });
+            } else {
+              isPlaying = true;
+              updateIcon();
+            }
+          } else {
+            music.pause();
+            isPlaying = false;
+            updateIcon();
+          }
+        };
+
+        musicToggle.addEventListener("click", (e) => {
+          e.stopPropagation(); // tránh click lan sang các phần tử khác
+          toggleMusic();
+        });
+
+        // Đồng bộ icon nếu trạng thái play/pause thay đổi từ nơi khác
+        music.addEventListener("play", () => {
+          isPlaying = true;
+          updateIcon();
+        });
+
+        music.addEventListener("pause", () => {
+          isPlaying = false;
+          updateIcon();
+        });
+
+        updateIcon();
+      })();
+
+      // Tooltip hướng dẫn: hiện 3s sau khi trang load, không chặn thao tác
+      window.addEventListener("load", () => {
+        if (!musicTooltip) return;
+
+        // delay nhẹ để giao diện load xong cho mượt
+        setTimeout(() => {
+          musicTooltip.classList.add("show");
+          setTimeout(() => {
+            musicTooltip.classList.remove("show");
+          }, 3000);
+        }, 800);
       });
 
       var d = new Date(new Date("2026-01-04 11:00:00"));
