@@ -9,8 +9,8 @@ export default function handler(req, res) {
     <meta charset="UTF-8">
     <meta property="og:title" content="💖 Thiệp Cưới Online — Hải & Phương 💖 • 💌 Gửi: ${decodedName}" />
     <meta property="og:description" content="Trân trọng kính mời ${decodedName} đến dự tiệc cưới của Hải & Phương vào ngày 04/01/2026 ♡ ... ⏯️ NHẤN để xem thêm" />
-    <meta property="og:image" content="https://dungmywedding.vercel.app/images/thiepmoi.jpg" />
-    <meta property="og:url" content="https://dungmywedding.vercel.app/og?name=${name}" />
+    <meta property="og:image" content="https://hai-phuong-wedding.vercel.app/images/thiepmoi.jpg" />
+    <meta property="og:url" content="https://hai-phuong-wedding.vercel.app/og?name=${name}" />
     <meta property="og:type" content="website" />
     <meta http-equiv="refresh" content="0; url=/?name=${name}" />
     <style>
